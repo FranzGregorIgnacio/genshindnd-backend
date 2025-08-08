@@ -5,6 +5,7 @@ import connectDB from './config/db';
 import authRoutes from './routes/auth';
 import pingRoute from './routes/ping';
 import userRoutes from './routes/users';
+import characterRoutes from './routes/characters';
 
 
 dotenv.config();
@@ -22,6 +23,7 @@ connectDB();
 app.use('/api/auth', authRoutes);
 app.use('/api/ping', pingRoute);
 app.use('/api/users', userRoutes);
+app.use('/api/characters', characterRoutes);
 
 app.get('/', (_, res) => res.send('Genshin DnD API is running'));
 
